@@ -1,7 +1,8 @@
 FROM bitnami/kubectl
 
-RUN apk add --no-cache --upgrade bash
-RUN apk add jq
+USER root
+RUN apt-get update && apt-get upgrade -y 
+RUN apt-get install jq
 
 ENV SLEEP_DURATION 5s
 
