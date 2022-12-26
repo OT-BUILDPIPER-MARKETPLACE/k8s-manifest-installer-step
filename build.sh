@@ -10,6 +10,8 @@ logInfoMessage "Apply/Update for $FILE_LOCATION"
 logInfoMessage "I'll apply/update/delete [$FILE_LOCATION] whose properties are available at [$WORKSPACE] and have mounted at [$CODEBASE_DIR]"
 sleep  "$SLEEP_DURATION"
 
+cd  "$WORKSPACE"/"${CODEBASE_DIR}"
+
 logInfoMessage "Running below k8's command"
 logInfoMessage "kubectl $INSTRUCTION -f $FILE_LOCATION"
 
