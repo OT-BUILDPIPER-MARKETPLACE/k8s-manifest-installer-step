@@ -19,11 +19,11 @@ logInfoMessage "kubectl $INSTRUCTION -f $FILE_LOCATION"
 case "$INSTRUCTION" in
 
   apply)
-    kubectl apply -f $FILE_LOCATION
+    kubectl apply -f $FILE_LOCATION --kubeconfig $KUBE_CONFIG_FILE_PATH
     ;;
 
   delete)
-    kubectl delete -f $FILE_LOCATION
+    kubectl delete -f $FILE_LOCATION --kubeconfig $KUBE_CONFIG_FILE_PATH
     ;;
 
   *)
